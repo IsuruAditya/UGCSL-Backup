@@ -28,6 +28,7 @@ npm run dev           # Starts on http://localhost:5173
 
 For complete documentation, see:
 - **[PROJECT-DOCUMENTATION.md](./PROJECT-DOCUMENTATION.md)** - Complete project guide
+- **[RESEARCH_DIRECTORS_FEATURE.md](./RESEARCH_DIRECTORS_FEATURE.md)** - Research Directors gallery, QR system & MongoDB migration
 - **[PERFORMANCE_OPTIMIZATION.md](./PERFORMANCE_OPTIMIZATION.md)** - Performance details
 - **[MOBILE_ENHANCEMENTS.md](./MOBILE_ENHANCEMENTS.md)** - Mobile responsiveness
 
@@ -45,7 +46,8 @@ For complete documentation, see:
 - `/programs` - Programs (Searchable/Filterable)
 - `/programs/:slug` - Program Details
 - `/admissions` - Admissions (Intakes, Steps, Requirements)
-- `/research` - Research (Centers, Stats)
+- `/research` - Research (Centers, Stats, Directors Gallery)
+- `/research/directors/:id` - Research Director Profile
 - `/news` - News & Events
 - `/news/:slug` - News Details
 - `/contact` - Contact Form
@@ -58,6 +60,8 @@ For complete documentation, see:
 | GET | `/api/programs/:slug` | Get program by slug |
 | GET | `/api/news` | List all news |
 | GET | `/api/news/:slug` | Get news by slug |
+| GET | `/api/research-directors` | List all research directors |
+| GET | `/api/research-directors/:id` | Get director by ID |
 | POST | `/api/contact` | Submit contact form |
 | GET | `/api/health` | Health check |
 

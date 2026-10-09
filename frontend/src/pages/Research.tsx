@@ -2,21 +2,13 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef } from 'react';
 import QRCode from 'qrcode';
+import { useFetch } from '../hooks/useApi';
+import type { ResearchDirector } from '../types';
 import SEO from '../components/SEO';
 import './shared.css';
 import './Research.css';
 
 const areaIcons = ['🧠', '🕊️', '📈', '🌍'];
-
-type Director = {
-  id: string;
-  name: string;
-  role: string;
-  faculty: string;
-  specialization: string;
-  bio: string;
-  photo: string | null;
-};
 
 function QRCanvas({ url }: { url: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -34,8 +26,10 @@ function QRCanvas({ url }: { url: string }) {
   return <canvas ref={canvasRef} className="rd-qr-canvas" />;
 }
 
-function DirectorModal({ director, onClose }: { director: Director | null; onClose: () => void }) {
-  const profileUrl = director ? `https://ugcsl.lk/research/directors/${director.id.toLowerCase()}` : '';
+function DirectorModal({ director, onClose }: { director: ResearchDirector | null; onClose: () => void }) {
+  const profileUrl = director
+    ? `https://ugcsl.lk/research/directors/${director.directorId.toLowerCase()}`
+    : '';
 
   useEffect(() => {
     if (!director) return;
@@ -56,11 +50,10 @@ function DirectorModal({ director, onClose }: { director: Director | null; onClo
       <div className="rd-modal" onClick={(e) => e.stopPropagation()}>
         <button className="rd-modal-close" onClick={onClose} aria-label="Close">×</button>
 
-        {/* ID Card Header */}
         <div className="rd-modal-header">
           <div className="rd-modal-id-badge">
             <span className="rd-modal-id-label">UGCSL RESEARCH UNIT</span>
-            <span className="rd-modal-id-num">{director.id}</span>
+            <span className="rd-modal-id-num">{director.directorId}</span>
           </div>
           <div className="rd-modal-photo-wrap">
             {director.photo
@@ -70,7 +63,6 @@ function DirectorModal({ director, onClose }: { director: Director | null; onClo
           </div>
         </div>
 
-        {/* Details */}
         <div className="rd-modal-body">
           <div className="rd-modal-info">
             <h2 className="rd-modal-name">{director.name}</h2>
@@ -83,7 +75,6 @@ function DirectorModal({ director, onClose }: { director: Director | null; onClo
             {isTBA && <p className="rd-modal-bio rd-tba-note">This position is currently open. Appointment will be announced soon.</p>}
           </div>
 
-          {/* QR Code Section */}
           <div className="rd-modal-qr-section">
             <div className="rd-qr-wrap">
               <QRCanvas url={profileUrl} />
@@ -91,7 +82,7 @@ function DirectorModal({ director, onClose }: { director: Director | null; onClo
               <p className="rd-qr-url">{profileUrl}</p>
             </div>
             <a
-              href={`/research/directors/${director.id.toLowerCase()}`}
+              href={`/research/directors/${director.directorId.toLowerCase()}`}
               className="rd-modal-open-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -109,7 +100,11 @@ function DirectorModal({ director, onClose }: { director: Director | null; onClo
   );
 }
 
-function DirectorCard({ director, index, onClick }: { director: Director; index: number; onClick: () => void }) {
+function DirectorCard({ director, index, onClick }: {
+  director: ResearchDirector;
+  index: number;
+  onClick: () => void;
+}) {
   const isTBA = director.name === 'To Be Announced';
   return (
     <button
@@ -126,7 +121,7 @@ function DirectorCard({ director, index, onClick }: { director: Director; index:
         <div className="rd-card-overlay">
           <span className="rd-card-view-btn">View Profile</span>
         </div>
-        <span className="rd-card-id">{director.id}</span>
+        <span className="rd-card-id">{director.directorId}</span>
       </div>
       <div className="rd-card-body">
         <p className="rd-card-name">{isTBA ? 'To Be Announced' : director.name}</p>
@@ -140,8 +135,8 @@ function DirectorCard({ director, index, onClick }: { director: Director; index:
 export default function Research() {
   const { t } = useTranslation();
   const areas = t('research.areas', { returnObjects: true }) as { name: string; desc: string }[];
-  const directors = t('research.directors', { returnObjects: true }) as Director[];
-  const [selected, setSelected] = useState<Director | null>(null);
+  const { data: directors, loading: dLoading, error: dError } = useFetch<ResearchDirector[]>('/research-directors');
+  const [selected, setSelected] = useState<ResearchDirector | null>(null);
 
   return (
     <main>
@@ -150,6 +145,7 @@ export default function Research() {
         description="Explore UGCSL's research focus areas in Psychology, Human Rights, Business Development, and Social Development. Partner with us for collaborative research."
         canonical="https://ugcsl.lk/research"
       />
+
       <section className="page-hero">
         <div className="page-hero-bg" />
         <div className="container page-hero-content">
@@ -186,11 +182,23 @@ export default function Research() {
             <h2 className="section-title">{t('research.directorsTitle')}</h2>
             <p className="section-subtitle">{t('research.directorsSubtitle')}</p>
           </div>
-          <div className="rd-grid">
-            {directors.map((d, i) => (
-              <DirectorCard key={d.id} director={d} index={i} onClick={() => setSelected(d)} />
-            ))}
-          </div>
+
+          {dLoading && <div className="spinner" />}
+
+          {dError && (
+            <div className="rd-fetch-error">
+              <span>⚠️</span>
+              <p>Unable to load directors. Please try again later.</p>
+            </div>
+          )}
+
+          {!dLoading && !dError && directors && (
+            <div className="rd-grid">
+              {directors.map((d, i) => (
+                <DirectorCard key={d._id} director={d} index={i} onClick={() => setSelected(d)} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

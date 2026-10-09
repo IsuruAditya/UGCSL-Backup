@@ -55,3 +55,15 @@ export interface PaginatedResponse<T> {
   page: number;
   pages: number;
 }
+
+export interface ResearchDirector {
+  _id: string;
+  directorId: string;
+  name: string;
+  role: string;
+  faculty: string;
+  specialization: string;
+  bio: string;
+  photo: string | null;
+  order: number;
+}

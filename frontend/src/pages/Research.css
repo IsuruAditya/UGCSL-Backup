@@ -1,4 +1,18 @@
-/* ─── Research Directors Grid ─────────────────────────────────── */
+/* ─── Fetch error state ─────────────────────────────────────────── */
+.rd-fetch-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.rd-fetch-error span { font-size: 2.5rem; }
+.rd-fetch-error p { font-size: 15px; }
+
+/* ─── Research Directors Grid ───────────────────────────────────── */
 
 .rd-grid {
   display: grid;

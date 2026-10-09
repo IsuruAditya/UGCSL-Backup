@@ -7,6 +7,7 @@ import { randomBytes } from 'crypto';
 import contactRoutes from './routes/contact';
 import programRoutes from './routes/programs';
 import newsRoutes from './routes/news';
+import researchDirectorRoutes from './routes/researchDirectors';
 
 const IS_PROD = process.env.NODE_ENV === 'production';
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173').split(',');
@@ -48,6 +49,7 @@ app.get('/api/csrf-token', csrfHandler);
 app.use('/api/contact', contactRoutes);
 app.use('/api/programs', programRoutes);
 app.use('/api/news', newsRoutes);
+app.use('/api/research-directors', researchDirectorRoutes);
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok', campus: 'UGCSL' }));
 app.get('/', (_req, res) => res.json({ status: 'ok', campus: 'UGCSL', message: 'API is running' }));

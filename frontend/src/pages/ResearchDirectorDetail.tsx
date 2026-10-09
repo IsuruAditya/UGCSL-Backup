@@ -1,27 +1,19 @@
 import { useParams, Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useFetch } from '../hooks/useApi';
+import type { ResearchDirector } from '../types';
 import SEO from '../components/SEO';
 import './shared.css';
 import './ResearchDirectorDetail.css';
 
-type Director = {
-  id: string;
-  name: string;
-  role: string;
-  faculty: string;
-  specialization: string;
-  bio: string;
-  photo: string | null;
-};
-
 export default function ResearchDirectorDetail() {
   const { id } = useParams<{ id: string }>();
-  const { t } = useTranslation();
-  const directors = t('research.directors', { returnObjects: true }) as Director[];
+  const { data: director, loading, error } = useFetch<ResearchDirector>(
+    id ? `/research-directors/${id}` : ''
+  );
 
-  const director = directors.find((d) => d.id.toLowerCase() === id?.toLowerCase());
+  if (loading) return <main><div className="spinner" style={{ marginTop: '160px' }} /></main>;
 
-  if (!director) {
+  if (error || !director) {
     return (
       <main className="rdd-not-found">
         <div className="rdd-not-found-inner">
@@ -41,10 +33,9 @@ export default function ResearchDirectorDetail() {
       <SEO
         title={`${director.name} | UGCSL Research Unit`}
         description={`${director.role} – ${director.faculty}. ${director.bio}`}
-        canonical={`https://ugcsl.lk/research/directors/${director.id.toLowerCase()}`}
+        canonical={`https://ugcsl.lk/research/directors/${director.directorId.toLowerCase()}`}
       />
 
-      {/* Hero banner */}
       <section className="rdd-hero">
         <div className="rdd-hero-bg" />
         <div className="rdd-hero-shapes">
@@ -55,17 +46,15 @@ export default function ResearchDirectorDetail() {
           <Link to="/research" className="rdd-back">← Research Unit</Link>
           <div className="rdd-hero-badge">
             <span className="rdd-hero-badge-label">UGCSL · RESEARCH UNIT</span>
-            <span className="rdd-hero-badge-id">{director.id}</span>
+            <span className="rdd-hero-badge-id">{director.directorId}</span>
           </div>
         </div>
       </section>
 
-      {/* Main profile card */}
       <section className="section">
         <div className="container">
           <div className="rdd-card">
 
-            {/* Left: Photo + ID strip */}
             <div className="rdd-photo-col">
               <div className="rdd-photo-wrap">
                 {director.photo
@@ -80,14 +69,13 @@ export default function ResearchDirectorDetail() {
               </div>
               <div className="rdd-id-strip">
                 <div className="rdd-id-strip-left">
-                  <span className="rdd-id-strip-id">{director.id}</span>
+                  <span className="rdd-id-strip-id">{director.directorId}</span>
                   <span className="rdd-id-strip-unit">Research Unit</span>
                 </div>
                 <span className="rdd-id-strip-logo">UGCSL</span>
               </div>
             </div>
 
-            {/* Right: Info */}
             <div className="rdd-info-col">
               <div className="rdd-info-top">
                 <span className="rdd-info-label">Research Unit Director</span>
@@ -113,7 +101,6 @@ export default function ResearchDirectorDetail() {
                 </div>
               )}
 
-              {/* Metadata grid */}
               <div className="rdd-meta-grid">
                 <div className="rdd-meta-item">
                   <span className="rdd-meta-label">Faculty</span>
@@ -121,7 +108,7 @@ export default function ResearchDirectorDetail() {
                 </div>
                 <div className="rdd-meta-item">
                   <span className="rdd-meta-label">Member ID</span>
-                  <span className="rdd-meta-value rdd-meta-id">{director.id}</span>
+                  <span className="rdd-meta-value rdd-meta-id">{director.directorId}</span>
                 </div>
                 <div className="rdd-meta-item">
                   <span className="rdd-meta-label">Institution</span>
@@ -140,7 +127,6 @@ export default function ResearchDirectorDetail() {
             </div>
           </div>
 
-          {/* Institution footer seal */}
           <div className="rdd-institution-seal">
             <div className="rdd-seal-line" />
             <div className="rdd-seal-content">

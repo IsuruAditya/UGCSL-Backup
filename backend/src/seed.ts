@@ -2,6 +2,7 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import Program from "./models/Program";
 import News from "./models/News";
+import ResearchDirector from "./models/ResearchDirector";
 
 const seedPrograms = [
   {
@@ -97,6 +98,109 @@ const seedPrograms = [
     fees_si: "රු. 30,000 කි",
     intake: "2026",
     intake_si: "2026",
+  },
+];
+
+const seedResearchDirectors = [
+  {
+    directorId: 'RD-001',
+    name: 'Dr. W.A.A. Sampath Indrajith',
+    role: 'Director of Research',
+    faculty: 'Psychology & Counseling',
+    specialization: 'Psychological Counseling, Peace Studies',
+    bio: 'Psychological Counselor, UNPAF Peace Ambassador, Vishwa Keerthi Sri Desha Shakthi, Deshaprabhashwara Sihala Putra Gourawa, Deshamanya, Deshabandu.',
+    photo: 'https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/ceo_kgvmys',
+    order: 1,
+  },
+  {
+    directorId: 'RD-002',
+    name: 'Dr. A.P.S. Anoj de Silva',
+    role: 'Research Director',
+    faculty: 'Indigenous Medicine',
+    specialization: 'Traditional Medicine, Ayurveda',
+    bio: 'Vishwa Keerthi Sri Janaranjana, Vyaparavedi Nipun, Deshamanya Deshabandu (Honorary).',
+    photo: 'https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr2_t61i7k',
+    order: 2,
+  },
+  {
+    directorId: 'RD-003',
+    name: 'His Excellency Dr. B.H. Saiyadeen',
+    role: 'Research Director',
+    faculty: 'Law & Human Rights',
+    specialization: 'International Relations, Human Rights',
+    bio: 'Global Ambassador UNPAF, SL Ambassador IHPRC, SL Ambassador (Unami Buffalo Nation).',
+    photo: 'https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr3_zntzcr',
+    order: 3,
+  },
+  {
+    directorId: 'RD-004',
+    name: 'Mr. K. A. S. K. Gunaratne',
+    role: 'Research Director',
+    faculty: 'Cosmetology & Aesthetic Science',
+    specialization: 'Natural Cosmetology, Herbal Products',
+    bio: 'Founder of Natural Beauty Workshops, Managing Director of Challenge Lanka Herbal Products (Pvt) Ltd, Internationally Certified in Natural Aloe Vera Products.',
+    photo: 'https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr4_cuzb5q',
+    order: 4,
+  },
+  {
+    directorId: 'RD-005',
+    name: 'Dr. Rangana Hewa Kottage',
+    role: 'Research Director',
+    faculty: 'Agriculture',
+    specialization: 'Plantation Management, Sustainable Agriculture',
+    bio: 'Deshamanya, Vishwa Keerthi, Bachelor of Business Administration, Chairman of Golden Green Plantation (Pvt) Ltd and Golden Green Fertilizer (Pvt) Ltd.',
+    photo: 'https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr5_t7j9ij',
+    order: 5,
+  },
+  {
+    directorId: 'RD-006',
+    name: 'Dr. T.V. Dinesh Pradeep Kumara',
+    role: 'Research Director',
+    faculty: 'Political Science & Public Policy',
+    specialization: 'Governance, Public Policy',
+    bio: 'Vishwa Keerthi Sri Janaranjana, Vyaparavedi Nipun, Samajaseva Vibhushana, Deshamanya.',
+    photo: 'https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr6_mihf1m',
+    order: 6,
+  },
+  {
+    directorId: 'RD-007',
+    name: 'Mr. Udana Wewalagedara',
+    role: 'Research Associate',
+    faculty: 'Psychology & Counseling',
+    specialization: 'Social Work, Drug Abuse Management',
+    bio: 'M.Sc in Social Work (reading) - National Institute of Social Development, PQHRM - CIPM Sri Lanka, Higher Diploma in Counselling Psychology - SIBA Campus.',
+    photo: 'https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/visitingLec_rd2rnt',
+    order: 7,
+  },
+  {
+    directorId: 'RD-008',
+    name: 'To Be Announced',
+    role: 'Research Director',
+    faculty: 'Dance & Performing Arts',
+    specialization: 'Performing Arts Research',
+    bio: 'Appointment pending.',
+    photo: null,
+    order: 8,
+  },
+  {
+    directorId: 'RD-009',
+    name: 'To Be Announced',
+    role: 'Research Director',
+    faculty: 'Law & Human Rights',
+    specialization: 'Legal Research, Human Rights Law',
+    bio: 'Appointment pending.',
+    photo: null,
+    order: 9,
+  },
+  {
+    directorId: 'RD-010',
+    name: 'To Be Announced',
+    role: 'Research Associate',
+    faculty: 'Agriculture',
+    specialization: 'Agricultural Research',
+    bio: 'Appointment pending.',
+    photo: null,
+    order: 10,
   },
 ];
 
@@ -207,6 +311,10 @@ async function seed() {
     await News.deleteMany({});
     await News.insertMany(seedNews);
     console.log(`Seeded ${seedNews.length} news items`);
+
+    await ResearchDirector.deleteMany({});
+    await ResearchDirector.insertMany(seedResearchDirectors);
+    console.log(`Seeded ${seedResearchDirectors.length} research directors`);
 
     await mongoose.disconnect();
     console.log("Database seeding completed successfully");
