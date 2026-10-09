@@ -415,7 +415,102 @@
     "collaborateLabel": "Collaborate",
     "collaborateTitle": "Partner With Us",
     "collaborateDesc": "We welcome collaborations with industry, government, and research institutions. If you share our vision for knowledge-driven social progress, we'd love to connect.",
-    "getInTouch": "Get in Touch →"
+    "getInTouch": "Get in Touch →",
+    "directorsLabel": "Research Unit",
+    "directorsTitle": "Directors of Research",
+    "directorsSubtitle": "Meet the distinguished academics and professionals leading UGCSL's research initiatives across all faculties.",
+    "directors": [
+      {
+        "id": "RD-001",
+        "name": "Dr. W.A.A. Sampath Indrajith",
+        "role": "Director of Research",
+        "faculty": "Psychology & Counseling",
+        "specialization": "Psychological Counseling, Peace Studies",
+        "bio": "Psychological Counselor, UNPAF Peace Ambassador, Vishwa Keerthi Sri Desha Shakthi, Deshaprabhashwara Sihala Putra Gourawa, Deshamanya, Deshabandu.",
+        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/ceo_kgvmys"
+      },
+      {
+        "id": "RD-002",
+        "name": "Dr. A.P.S. Anoj de Silva",
+        "role": "Research Director",
+        "faculty": "Indigenous Medicine",
+        "specialization": "Traditional Medicine, Ayurveda",
+        "bio": "Vishwa Keerthi Sri Janaranjana, Vyaparavedi Nipun, Deshamanya Deshabandu (Honorary).",
+        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr2_t61i7k"
+      },
+      {
+        "id": "RD-003",
+        "name": "His Excellency Dr. B.H. Saiyadeen",
+        "role": "Research Director",
+        "faculty": "Law & Human Rights",
+        "specialization": "International Relations, Human Rights",
+        "bio": "Global Ambassador UNPAF, SL Ambassador IHPRC, SL Ambassador (Unami Buffalo Nation).",
+        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr3_zntzcr"
+      },
+      {
+        "id": "RD-004",
+        "name": "Mr. K. A. S. K. Gunaratne",
+        "role": "Research Director",
+        "faculty": "Cosmetology & Aesthetic Science",
+        "specialization": "Natural Cosmetology, Herbal Products",
+        "bio": "Founder of Natural Beauty Workshops, Managing Director of Challenge Lanka Herbal Products (Pvt) Ltd, Internationally Certified in Natural Aloe Vera Products.",
+        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr4_cuzb5q"
+      },
+      {
+        "id": "RD-005",
+        "name": "Dr. Rangana Hewa Kottage",
+        "role": "Research Director",
+        "faculty": "Agriculture",
+        "specialization": "Plantation Management, Sustainable Agriculture",
+        "bio": "Deshamanya, Vishwa Keerthi, Bachelor of Business Administration, Chairman of Golden Green Plantation (Pvt) Ltd and Golden Green Fertilizer (Pvt) Ltd.",
+        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr5_t7j9ij"
+      },
+      {
+        "id": "RD-006",
+        "name": "Dr. T.V. Dinesh Pradeep Kumara",
+        "role": "Research Director",
+        "faculty": "Political Science & Public Policy",
+        "specialization": "Governance, Public Policy",
+        "bio": "Vishwa Keerthi Sri Janaranjana, Vyaparavedi Nipun, Samajaseva Vibhushana, Deshamanya.",
+        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr6_mihf1m"
+      },
+      {
+        "id": "RD-007",
+        "name": "Mr. Udana Wewalagedara",
+        "role": "Research Associate",
+        "faculty": "Psychology & Counseling",
+        "specialization": "Social Work, Drug Abuse Management",
+        "bio": "M.Sc in Social Work (reading) - National Institute of Social Development, PQHRM - CIPM Sri Lanka, Higher Diploma in Counselling Psychology - SIBA Campus.",
+        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/visitingLec_rd2rnt"
+      },
+      {
+        "id": "RD-008",
+        "name": "To Be Announced",
+        "role": "Research Director",
+        "faculty": "Dance & Performing Arts",
+        "specialization": "Performing Arts Research",
+        "bio": "Appointment pending.",
+        "photo": null
+      },
+      {
+        "id": "RD-009",
+        "name": "To Be Announced",
+        "role": "Research Director",
+        "faculty": "Law & Human Rights",
+        "specialization": "Legal Research, Human Rights Law",
+        "bio": "Appointment pending.",
+        "photo": null
+      },
+      {
+        "id": "RD-010",
+        "name": "To Be Announced",
+        "role": "Research Associate",
+        "faculty": "Agriculture",
+        "specialization": "Agricultural Research",
+        "bio": "Appointment pending.",
+        "photo": null
+      }
+    ]
   },
   "news": {
     "label": "News & Events",

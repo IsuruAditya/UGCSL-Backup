@@ -16,6 +16,7 @@ const News = lazy(() => import('./pages/News'));
 const NewsDetail = lazy(() => import('./pages/NewsDetail'));
 const Contact = lazy(() => import('./pages/Contact'));
 const ProgramDetail = lazy(() => import('./pages/ProgramDetail'));
+const ResearchDirectorDetail = lazy(() => import('./pages/ResearchDirectorDetail'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const PAGE_TITLES: Record<string, string> = {
@@ -66,6 +67,7 @@ export default function App() {
               <Route path="/programs/:slug" element={<ProgramDetail />} />
               <Route path="/admissions" element={<Admissions />} />
               <Route path="/research" element={<Research />} />
+              <Route path="/research/directors/:id" element={<ResearchDirectorDetail />} />
               <Route path="/news" element={<News />} />
               <Route path="/news/:slug" element={<NewsDetail />} />
               <Route path="/contact" element={<Contact />} />

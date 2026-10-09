@@ -4,3 +4,6 @@ https://www.ugcsl.lk/* https://ugcsl.lk/:splat 301!
 # Redirect http to https
 http://ugcsl.lk/* https://ugcsl.lk/:splat 301!
 http://www.ugcsl.lk/* https://ugcsl.lk/:splat 301!
+
+# SPA fallback — must be last
+/* /index.html 200
