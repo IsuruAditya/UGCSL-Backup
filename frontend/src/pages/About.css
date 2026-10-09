@@ -175,6 +175,31 @@
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.board-cards-centered {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.board-cards-centered .board-card {
+  flex: 0 0 calc((100% - 72px) / 4);
+  max-width: 260px;
+}
+
+@media (max-width: 1024px) {
+  .board-cards-centered .board-card { flex: 0 0 calc((100% - 48px) / 3); }
+}
+
+@media (max-width: 900px) {
+  .board-cards-centered .board-card { flex: 0 0 calc((100% - 24px) / 2); }
+}
+
+@media (max-width: 559px) {
+  .board-cards-centered { gap: 16px; }
+  .board-cards-centered .board-card { flex: 0 0 100%; max-width: 100%; }
+}
+
 .board-card {
   flex: 0 0 calc((100% - 72px) / 4);
   display: flex;

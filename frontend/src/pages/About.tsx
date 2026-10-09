@@ -50,16 +50,16 @@ function MemberModal({ member, onClose }: { member: CarouselMember | null; onClo
 }
 
 function MemberCarousel({ members }: { members: CarouselMember[] }) {
-  const [cardsPerView, setCardsPerView] = useState(getCardsPerView);
+  const [cardsPerView, setCardsPerView] = useState(() => Math.min(getCardsPerView(), members.length));
   const [index, setIndex] = useState(0);
   const [selectedMember, setSelectedMember] = useState<CarouselMember | null>(null);
   const trackWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onResize = () => { setCardsPerView(getCardsPerView()); setIndex(0); };
+    const onResize = () => { setCardsPerView(Math.min(getCardsPerView(), members.length)); setIndex(0); };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, []);
+  }, [members.length]);
 
   const maxIndex = Math.max(0, members.length - cardsPerView);
   const prev = useCallback(() => setIndex((i) => Math.max(0, i - 1)), []);
@@ -74,36 +74,56 @@ function MemberCarousel({ members }: { members: CarouselMember[] }) {
 
   return (
     <>
-      <div className="board-carousel-wrap">
-        <div className="board-carousel-track-wrap" ref={trackWrapRef}>
-          <div className="board-carousel-track" style={{ transform: `translateX(-${getOffset()}px)` }}>
-            {members.map((member, i) => (
-              <div key={i} className="board-card" onClick={() => setSelectedMember(member)}>
-                <div className="board-photo-wrap">
-                  {member.photo
-                    ? <img src={member.photo} alt={member.name} className="board-photo" />
-                    : <div className="board-photo-placeholder">👤</div>
-                  }
-                </div>
-                <div className="board-info">
-                  <h4>{member.name}</h4>
-                  <p className="board-role">{member.role}</p>
-                  {member.bio && <p className="board-bio">{member.bio}</p>}
-                </div>
+      {maxIndex === 0 ? (
+        <div className="board-cards-centered">
+          {members.map((member, i) => (
+            <div key={i} className="board-card" onClick={() => setSelectedMember(member)}>
+              <div className="board-photo-wrap">
+                {member.photo
+                  ? <img src={member.photo} alt={member.name} className="board-photo" />
+                  : <div className="board-photo-placeholder">👤</div>
+                }
               </div>
-            ))}
+              <div className="board-info">
+                <h4>{member.name}</h4>
+                <p className="board-role">{member.role}</p>
+                {member.bio && <p className="board-bio">{member.bio}</p>}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="board-carousel-wrap">
+          <div className="board-carousel-track-wrap" ref={trackWrapRef}>
+            <div className="board-carousel-track" style={{ transform: `translateX(-${getOffset()}px)` }}>
+              {members.map((member, i) => (
+                <div key={i} className="board-card" onClick={() => setSelectedMember(member)}>
+                  <div className="board-photo-wrap">
+                    {member.photo
+                      ? <img src={member.photo} alt={member.name} className="board-photo" />
+                      : <div className="board-photo-placeholder">👤</div>
+                    }
+                  </div>
+                  <div className="board-info">
+                    <h4>{member.name}</h4>
+                    <p className="board-role">{member.role}</p>
+                    {member.bio && <p className="board-bio">{member.bio}</p>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="carousel-nav">
+            <button className="carousel-btn" onClick={prev} disabled={index === 0} aria-label="Previous">‹</button>
+            <div className="carousel-dots">
+              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                <button key={i} className={`carousel-dot ${i === index ? 'active' : ''}`} onClick={() => setIndex(i)} aria-label={`Slide ${i + 1}`} />
+              ))}
+            </div>
+            <button className="carousel-btn" onClick={next} disabled={index === maxIndex} aria-label="Next">›</button>
           </div>
         </div>
-        <div className="carousel-nav">
-          <button className="carousel-btn" onClick={prev} disabled={index === 0} aria-label="Previous">‹</button>
-          <div className="carousel-dots">
-            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-              <button key={i} className={`carousel-dot ${i === index ? 'active' : ''}`} onClick={() => setIndex(i)} aria-label={`Slide ${i + 1}`} />
-            ))}
-          </div>
-          <button className="carousel-btn" onClick={next} disabled={index === maxIndex} aria-label="Next">›</button>
-        </div>
-      </div>
+      )}
       <MemberModal member={selectedMember} onClose={() => setSelectedMember(null)} />
     </>
   );

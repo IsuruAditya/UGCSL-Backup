@@ -16,8 +16,9 @@
 
 .rd-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
 
 .rd-card {
@@ -446,16 +447,8 @@
 
 /* ─── Responsive ────────────────────────────────────────────────── */
 
-@media (max-width: 1200px) {
-  .rd-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-@media (max-width: 900px) {
-  .rd-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
 @media (max-width: 640px) {
-  .rd-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .rd-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
   .rd-modal-body { grid-template-columns: 1fr; gap: 24px; }
   .rd-modal-qr-section { flex-direction: row; align-items: flex-start; }
   .rd-modal-header { padding: 28px 20px 0; }
@@ -464,7 +457,7 @@
 }
 
 @media (max-width: 400px) {
-  .rd-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .rd-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
   .rd-card-body { padding: 10px; }
   .rd-card-name { font-size: 11px; }
   .rd-card-role { font-size: 10px; }
