@@ -110,7 +110,7 @@ function DirectorCard({ director, index, onClick }: {
     <button
       className="rd-card"
       onClick={onClick}
-      style={{ animationDelay: `${index * 40}ms` }}
+      style={{ animationDelay: `${Math.min(index * 40, 400)}ms` }}
       aria-label={`View profile of ${director.name}`}
     >
       <div className="rd-card-photo-wrap">
