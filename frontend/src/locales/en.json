@@ -142,12 +142,6 @@
         "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/ceo_kgvmys"
       },
       {
-        "name": "Dr. A.P.S. Anoj de Silva",
-        "role": "Director",
-        "bio": "Vishwa Keerthi Sri Janaranjana, Vyaparavedi Nipun, Deshamanya Deshabandu (Honorary)",
-        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr2_t61i7k"
-      },
-      {
         "name": "His Excellency Dr. B.H. Saiyadeen",
         "role": "Director",
         "bio": "Global Ambassador UNPAF, SL Ambassador IHPRC, SL Ambassador (Unami Buffalo Nation)",
@@ -158,18 +152,6 @@
         "role": "Director",
         "bio": "Founder of Natural Beauty Workshops, Diploma Holder in Beauty Culture, Member of the Natural Beauty Forum, Managing Director of Challenge Lanka Herbal Products (Pvt) Ltd, Member of the Lanka Human Rights Organization, Internationally Certified in Natural Aloe Vera Plant and Aloe Vera Products, Sri Lankabhimani Sinhalavedi Deshamanya Traditional Physician",
         "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr4_cuzb5q"
-      },
-      {
-        "name": "Dr. Rangana Hewa Kottage",
-        "role": "Director",
-        "bio": "Deshamanya, Vishwa Keerthi ,Bachelor of Business Administration, Chairman of Golden Green Plantation (Pvt) Ltd and Golden Green Fertilizer (Pvt) Ltd.",
-        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr5_t7j9ij"
-      },
-      {
-        "name": "Dr. T.V. Dinesh Pradeep Kumara",
-        "role": "Director",
-        "bio": "Vishwa Keerthi Sri Janaranjana, Vyaparavedi Nipun, Samajaseva Vibhushana, Deshamanya",
-        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr6_mihf1m"
       }
     ],
     "operationalLabel": "Management Team",
@@ -195,12 +177,6 @@
         "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/HRMN_udmfdq"
       },
       {
-        "name": "Dr. Harshana Sandun Pushpakumara",
-        "role": "Marketing Manager",
-        "bio": "",
-        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/MMN_uldqo1"
-      },
-      {
         "name": "To Be Announced",
         "role": "Finance Manager",
         "bio": "Appointment pending",
@@ -212,34 +188,16 @@
     "academicSubtitle": "Our academic team leads the faculties and programs of UGCSL with expertise and dedication.",
     "academicStaff": [
       {
-        "name": "Ven. Kandakatiye Dharmarathana Thero",
-        "role": "Grand Chancellor (cleric)",
-        "bio": "Shasana Shobana, Kawya Visharadha, Bachelor of Arts, National Diploma in Teaching (Science), Trained Teacher / School Teacher",
-        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/chancellor_ocanhy"
-      },
-      {
         "name": "His Excellency Dr. B.H. Saiyadeen",
         "role": "Chancellor (lay)",
         "bio": "Global Ambassador UNPAF, SL Ambassador IHPRC, SL Ambassador (Unami Buffalo Nation)",
         "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr3_zntzcr"
       },
       {
-        "name": "Ven. Ruwanpura Gnanavimala Sthavira",
-        "role": "Vice-Chancellor",
-        "bio": "Incumbent of Deepaloka Viharaya, Mudaliwatta, Kadugannawa. Deputy Director of Gunasiri Sandaham Nikethanaya (Bhikkhu Training Institute), Dekatana. Principal of Sri Deepaloka Dhamma School. Chief Organizer of Deepaloka Buddha Bhumi Pilgrimage. Justice of the Peace (for the entire island). Sri Saddharma Vagishwara Vishwa Kirthi Sasana Shobhana, Sarabhagna Maha Pandita, Sri Sakya Sinha Vibhushana Sasana Shiromani. Member of the Supreme Executive Board of Sri Sakya Sinha University. Buddhist Philosophy (Dip) Royal High Campus.",
-        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/ViceChancellor_pwzbl9"
-      },
-      {
         "name": "Mr. K. A. S. K. Gunaratne",
         "role": "Dean of Cosmetology and Aesthetic Sciences",
         "bio": "Founder of Natural Beauty Workshops, Diploma Holder in Beauty Culture, Member of the Natural Beauty Forum, Managing Director of Challenge Lanka Herbal Products (Pvt) Ltd, Director of United Global University, Member of the Lanka Human Rights Organization, Internationally Certified in Natural Aloe Vera Plant and Aloe Vera Products, Sri Lankabhimani Sinhalavedi Deshamanya Traditional Physician",
         "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr4_cuzb5q"
-      },
-      {
-        "name": "Dr. A.P.S. Anoj de Silva",
-        "role": "Dean of Indigenous Medicine",
-        "bio": "Vishwa Keerthi Sri Janaranjana, Vyaparavedi Nipun, Deshamanya Deshabandu (Honorary)",
-        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr2_t61i7k"
       },
       {
         "name": "Mr. Udana Wewalagedara",
