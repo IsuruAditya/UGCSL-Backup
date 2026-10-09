@@ -10,9 +10,7 @@ import './Research.css';
 
 const areaIcons = ['🧠', '🕊️', '📈', '🌍'];
 
-function QRCanvas({ url }: { url: string }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
+function QRCanvas({ url, canvasRef }: { url: string; canvasRef: React.RefObject<HTMLCanvasElement | null> }) {
   useEffect(() => {
     if (canvasRef.current) {
       QRCode.toCanvas(canvasRef.current, url, {
@@ -21,7 +19,7 @@ function QRCanvas({ url }: { url: string }) {
         color: { dark: '#1a3a6b', light: '#ffffff' },
       });
     }
-  }, [url]);
+  }, [url, canvasRef]);
 
   return <canvas ref={canvasRef} className="rd-qr-canvas" />;
 }
@@ -42,8 +40,18 @@ function DirectorModal({ director, onClose }: { director: ResearchDirector | nul
     };
   }, [director, onClose]);
 
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
   if (!director) return null;
   const isTBA = director.name === 'To Be Announced';
+
+  function downloadQR() {
+    if (!canvasRef.current) return;
+    const a = document.createElement('a');
+    a.download = `UGCSL-${director!.directorId}-QR.png`;
+    a.href = canvasRef.current.toDataURL('image/png');
+    a.click();
+  }
 
   return (
     <div className="rd-modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
@@ -77,10 +85,13 @@ function DirectorModal({ director, onClose }: { director: ResearchDirector | nul
 
           <div className="rd-modal-qr-section">
             <div className="rd-qr-wrap">
-              <QRCanvas url={profileUrl} />
+              <QRCanvas url={profileUrl} canvasRef={canvasRef} />
               <p className="rd-qr-label">Scan to verify ID</p>
               <p className="rd-qr-url">{profileUrl}</p>
             </div>
+            <button onClick={downloadQR} className="rd-modal-open-link">
+              ⬇ Download QR
+            </button>
             <a
               href={`/research/directors/${director.directorId.toLowerCase()}`}
               className="rd-modal-open-link"
