@@ -25,8 +25,9 @@ function QRCanvas({ url, canvasRef }: { url: string; canvasRef: React.RefObject<
 }
 
 function DirectorModal({ director, onClose }: { director: ResearchDirector | null; onClose: () => void }) {
+  const encodedId = director ? director.directorId.split('/').pop() : '';
   const profileUrl = director
-    ? `https://ugcsl.lk/research/directors/${director.directorId.toLowerCase()}`
+    ? `https://ugcsl.lk/research/directors/${encodedId}`
     : '';
 
   useEffect(() => {
@@ -93,7 +94,7 @@ function DirectorModal({ director, onClose }: { director: ResearchDirector | nul
               ⬇ Download QR
             </button>
             <a
-              href={`/research/directors/${director.directorId.toLowerCase()}`}
+              href={`/research/directors/${director.directorId.split('/').pop()}`}
               className="rd-modal-open-link"
               target="_blank"
               rel="noopener noreferrer"

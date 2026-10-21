@@ -33,7 +33,7 @@ export default function ResearchDirectorDetail() {
       <SEO
         title={`${director.name} | UGCSL Research Unit`}
         description={`${director.role} – ${director.faculty}. ${director.bio}`}
-        canonical={`https://ugcsl.lk/research/directors/${director.directorId.toLowerCase()}`}
+        canonical={`https://ugcsl.lk/research/directors/${director.directorId.split('/').pop()}`}
       />
 
       <section className="rdd-hero">
