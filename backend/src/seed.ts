@@ -101,20 +101,349 @@ const seedPrograms = [
   },
 ];
 
-const tba = (id: string, role: string, faculty: string, order: number) => ({
-  directorId: id,
-  name: 'To Be Announced',
-  role,
-  faculty,
-  specialization: 'Appointment pending',
-  bio: 'Appointment pending.',
-  photo: null,
-  order,
-});
-
-const seedResearchDirectors = Array.from({ length: 25 }, (_, i) =>
-  tba(`RD-${String(i + 1).padStart(3, '0')}`, 'Research Director', 'To Be Announced', i + 1)
-);
+const seedResearchDirectors = [
+  // ── 01 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/054',
+    name: 'J.S.A. Perera',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 1,
+  },
+  // ── 02 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/052',
+    name: 'M.M. Upali Padmakumara',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 2,
+  },
+  // ── 03 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/028',
+    name: 'Amosh Herston Fernando',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 3,
+  },
+  // ── 04 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/006',
+    name: 'B.M.M.P. Basnayake',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 4,
+  },
+  // ── 05 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/050',
+    name: 'S.M.I.W.B. Senevirathne',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 5,
+  },
+  // ── 06 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/042',
+    name: 'M.M.M. Masoor',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 6,
+  },
+  // ── 07 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/027',
+    name: 'W.G. Gayani S. Karunarathne',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 7,
+  },
+  // ── 08 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/034',
+    name: 'W.G. Gayathri S. Karunarathne',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 8,
+  },
+  // ── 09 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/030',
+    name: 'B.P. Thilina Kumara',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 9,
+  },
+  // ── 10 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/013',
+    name: 'R.J. Manoj Pushpa Kumara',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 10,
+  },
+  // ── 11 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/056',
+    name: 'M.T. Chithra Chandani',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 11,
+  },
+  // ── 12 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/004',
+    name: 'A.P.S. Perera',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 12,
+  },
+  // ── 13 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/024',
+    name: 'W.G. Mithila Rangana Darmasiri',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 13,
+  },
+  // ── 14 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/032',
+    name: 'Madhawa D. Rajapaksha',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 14,
+  },
+  // ── 15 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/057',
+    name: 'W.K. Shirome Manike',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 15,
+  },
+  // ── 16 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/020',
+    name: 'J.A.A.M. Nuwan Jayasekara',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 16,
+  },
+  // ── 17 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/017',
+    name: 'W.M.T.R.S.B. Wijesundara',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 17,
+  },
+  // ── 18 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/039',
+    name: 'W.A.I. Sanjeewa',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 18,
+  },
+  // ── 19 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/022',
+    name: 'U.W. Sisil Himidiri Ruwanpura',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 19,
+  },
+  // ── 20 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/026',
+    name: 'K.G.R.T. Harischandra',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 20,
+  },
+  // ── 21 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/062',
+    name: 'R.A.D.J. Ravindra Perera',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 21,
+  },
+  // ── 22 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/038',
+    name: 'S.M.P. Renuka',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 22,
+  },
+  // ── 23 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/009',
+    name: 'Nasardeen Sahla',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 23,
+  },
+  // ── 24 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/005',
+    name: 'G.J. Werapitiya',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 24,
+  },
+  // ── 25 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/025',
+    name: 'R. Collington Subash',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 25,
+  },
+  // ── 26 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/010',
+    name: 'K.V. Menuwan Asiri',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 26,
+  },
+  // ── 27 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/074',
+    name: 'D.K.G. Jayantha Bandara',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 27,
+  },
+  // ── 28 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/023',
+    name: 'K.A.M.N.N. Kulathilaka',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 28,
+  },
+  // ── 29 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/029',
+    name: 'P.V.S.S. Jayawardana',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 29,
+  },
+  // ── 30 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/068',
+    name: 'K.G. Iresha Sandamali',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 30,
+  },
+  // ── 31 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: 'UGCSL/RUD/2026/078',
+    name: 'B.V.D.S. Kumara Batewela',
+    role: 'Research Director',
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo: null,
+    order: 31,
+  },
+];
 
 const seedNews = [
   {
