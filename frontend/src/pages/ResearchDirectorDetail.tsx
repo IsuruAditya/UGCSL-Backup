@@ -32,7 +32,7 @@ export default function ResearchDirectorDetail() {
     <main>
       <SEO
         title={`${director.name} | UGCSL Research Unit`}
-        description={`${director.role} – ${director.faculty}. ${director.bio}`}
+        description={`${director.role}${director.faculty ? ` – ${director.faculty}` : ''}${director.bio ? `. ${director.bio}` : ''}`}
         canonical={`https://ugcsl.lk/research/directors/${director.directorId.split('/').pop()}`}
       />
 
@@ -81,16 +81,25 @@ export default function ResearchDirectorDetail() {
                 <span className="rdd-info-label">Research Unit Director</span>
                 <h1 className="rdd-name">{director.name}</h1>
                 <p className="rdd-role">{director.role}</p>
-                <div className="rdd-tags">
-                  <span className="rdd-tag rdd-tag-faculty">{director.faculty}</span>
-                  {!isTBA && <span className="rdd-tag rdd-tag-spec">{director.specialization}</span>}
-                </div>
+                {(director.faculty || director.specialization) && (
+                  <div className="rdd-tags">
+                    {director.faculty && <span className="rdd-tag rdd-tag-faculty">{director.faculty}</span>}
+                    {director.specialization && <span className="rdd-tag rdd-tag-spec">{director.specialization}</span>}
+                  </div>
+                )}
               </div>
 
-              {!isTBA && (
+              {director.bio && (
                 <div className="rdd-bio-block">
                   <h3 className="rdd-bio-title">Profile</h3>
                   <p className="rdd-bio">{director.bio}</p>
+                </div>
+              )}
+
+              {!director.bio && !isTBA && (
+                <div className="rdd-tba-block">
+                  <span className="rdd-tba-icon">📋</span>
+                  <p>Profile details will be updated soon.</p>
                 </div>
               )}
 
@@ -102,10 +111,12 @@ export default function ResearchDirectorDetail() {
               )}
 
               <div className="rdd-meta-grid">
-                <div className="rdd-meta-item">
-                  <span className="rdd-meta-label">Faculty</span>
-                  <span className="rdd-meta-value">{director.faculty}</span>
-                </div>
+                {director.faculty && (
+                  <div className="rdd-meta-item">
+                    <span className="rdd-meta-label">Faculty</span>
+                    <span className="rdd-meta-value">{director.faculty}</span>
+                  </div>
+                )}
                 <div className="rdd-meta-item">
                   <span className="rdd-meta-label">Member ID</span>
                   <span className="rdd-meta-value rdd-meta-id">{director.directorId}</span>

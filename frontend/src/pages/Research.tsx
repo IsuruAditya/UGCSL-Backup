@@ -76,12 +76,13 @@ function DirectorModal({ director, onClose }: { director: ResearchDirector | nul
           <div className="rd-modal-info">
             <h2 className="rd-modal-name">{director.name}</h2>
             <p className="rd-modal-role">{director.role}</p>
-            <div className="rd-modal-tags">
-              <span className="rd-modal-tag rd-tag-faculty">{director.faculty}</span>
-              {!isTBA && <span className="rd-modal-tag rd-tag-spec">{director.specialization}</span>}
-            </div>
-            {!isTBA && <p className="rd-modal-bio">{director.bio}</p>}
-            {isTBA && <p className="rd-modal-bio rd-tba-note">This position is currently open. Appointment will be announced soon.</p>}
+            {(director.faculty || director.specialization) && (
+              <div className="rd-modal-tags">
+                {director.faculty && <span className="rd-modal-tag rd-tag-faculty">{director.faculty}</span>}
+                {director.specialization && <span className="rd-modal-tag rd-tag-spec">{director.specialization}</span>}
+              </div>
+            )}
+            {director.bio && <p className="rd-modal-bio">{director.bio}</p>}
           </div>
 
           <div className="rd-modal-qr-section">
@@ -138,7 +139,7 @@ function DirectorCard({ director, index, onClick }: {
       <div className="rd-card-body">
         <p className="rd-card-name">{isTBA ? 'To Be Announced' : director.name}</p>
         <p className="rd-card-role">{director.role}</p>
-        <span className="rd-card-faculty">{director.faculty}</span>
+        {director.faculty && <span className="rd-card-faculty">{director.faculty}</span>}
       </div>
     </button>
   );
