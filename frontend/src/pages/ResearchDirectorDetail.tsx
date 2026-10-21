@@ -96,13 +96,6 @@ export default function ResearchDirectorDetail() {
                 </div>
               )}
 
-              {!director.bio && !isTBA && (
-                <div className="rdd-tba-block">
-                  <span className="rdd-tba-icon">📋</span>
-                  <p>Profile details will be updated soon.</p>
-                </div>
-              )}
-
               {isTBA && (
                 <div className="rdd-tba-block">
                   <span className="rdd-tba-icon">📋</span>
