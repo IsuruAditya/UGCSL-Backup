@@ -12,10 +12,15 @@ router.get('/', async (_req: Request, res: Response) => {
   }
 });
 
-router.get('/:directorId', async (req: Request, res: Response) => {
+router.get('/:suffix', async (req: Request, res: Response) => {
+  const suffix = (req.params.suffix as string).trim();
+  if (!suffix) {
+    res.status(400).json({ message: 'Invalid director ID' });
+    return;
+  }
   try {
     const director = await ResearchDirector.findOne({
-      directorId: (req.params.directorId as string).toUpperCase(),
+      directorId: { $regex: new RegExp(`/${suffix}$`, 'i') },
     });
     if (!director) return res.status(404).json({ message: 'Director not found' });
     res.json(director);
