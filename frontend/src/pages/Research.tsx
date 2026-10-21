@@ -44,7 +44,6 @@ function DirectorModal({ director, onClose }: { director: ResearchDirector | nul
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   if (!director) return null;
-  const isTBA = director.name === 'To Be Announced';
 
   function downloadQR() {
     if (!canvasRef.current) return;
