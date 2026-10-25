@@ -580,6 +580,31 @@ const seedNews = [
     author: "UGCSL Admissions Office",
   },
   {
+    title: "UGCSL Honoured with Jury's Special Award at Saranganavi International Golden Awards 2026",
+    slug: "ugcsl-jurys-special-award-saranganavi-2026",
+    category: "Achievement",
+    excerpt:
+      "United Global Campus of Sri Lanka has been honoured with the Jury's Special Award at the Saranganavi International Golden Awards Ceremony 2026, marking a proud milestone in the institution's journey.",
+    content: `<p>United Global Campus of Sri Lanka (UGCSL) is honoured to announce that it has been presented with the prestigious <strong>Jury's Special Award</strong> at the <strong>Saranganavi International Golden Awards Ceremony 2026</strong>. This distinguished recognition marks a significant milestone in our institutional journey and stands as a testament to our unwavering commitment to excellence in higher education.</p>
+
+<h3>A Recognition of Institutional Excellence</h3>
+<p>The Saranganavi International Golden Awards is a respected platform that recognises outstanding contributions across various sectors. Being selected for the Jury's Special Award reflects UGCSL's dedication to advancing higher education, fostering research, promoting human development, supporting psychological well-being, and upholding social responsibility.</p>
+
+<h3>Our Commitment Going Forward</h3>
+<p>This honour reinforces our resolve to continue building an institution that empowers individuals through quality education, drives meaningful research, and contributes positively to the nation and the global community. We remain steadfast in our mission to educate, empower, and inspire the next generation of leaders and professionals.</p>
+
+<h3>Acknowledgements</h3>
+<p>UGCSL extends its sincere gratitude to the organising committee of the Saranganavi International Golden Awards 2026 and the distinguished jury for this special recognition. We also thank our faculty, staff, students, and all stakeholders whose collective dedication has made this achievement possible.</p>
+
+<p>This award motivates us to move forward with greater purpose — championing knowledge, research, and human potential in service of a better future for Sri Lanka and the world.</p>
+
+<p><em>United Global Campus of Sri Lanka — Educate, Empower, Inspire.</em></p>`,
+    date: new Date("2026-04-25"),
+    image:
+      "https://res.cloudinary.com/dxkfytlpu/image/upload/v1792925616/award1_o5icff.jpg",
+    author: "UGCSL Communications",
+  },
+  {
     title: "UGCSL Officially Established as a Higher Education Institution",
     slug: "ugcsl-officially-established",
     category: "Announcement",
