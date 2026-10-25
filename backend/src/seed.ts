@@ -242,7 +242,8 @@ const seedResearchDirectors = [
     faculty: null,
     specialization: null,
     bio: null,
-    photo: null,
+    photo:
+      "https://res.cloudinary.com/dxkfytlpu/image/upload/v1792775380/APSPerera_rdez1o.jpg",
     order: 12,
   },
   // ── 13 ──────────────────────────────────────────────────────────────────────
@@ -493,8 +494,32 @@ const seedResearchDirectors = [
     specialization: null,
     bio: null,
     photo:
-      "https://res.cloudinary.com/dxkfytlpu/image/upload/v1792691766/shiraz_ffu0qc.jpg",
+      "https://res.cloudinary.com/dxkfytlpu/image/upload/v1792897602/shiraz_a2exdn.jpg",
     order: 33,
+  },
+  // ── 34 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: "UGCSL/RUD/2026/077",
+    name: "W.A.Kavidu Lakshana",
+    role: "Research Director",
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo:
+      "https://res.cloudinary.com/dxkfytlpu/image/upload/v1792897602/kavindu_kr64oj.jpg",
+    order: 34,
+  },
+  // ── 35 ──────────────────────────────────────────────────────────────────────
+  {
+    directorId: "UGCSL/RUD/2026/081",
+    name: "Shakila Kumari Wickramarathne",
+    role: "Research Director",
+    faculty: null,
+    specialization: null,
+    bio: null,
+    photo:
+      "https://res.cloudinary.com/dxkfytlpu/image/upload/v1792897602/shakila_azejah.jpg",
+    order: 35,
   },
 ];
 
