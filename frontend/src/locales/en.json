@@ -137,7 +137,7 @@
     "board": [
       {
         "name": "Dr. W.A.A. Sampath Indrajith",
-        "role": "Founder / CEO",
+        "role": "Founder / CEO / Vice Chancellor",
         "bio": "Psychological Counselor, UNPAF Peace Ambassador, Vishwa Keerthi Sri Desha Shakthi, Deshaprabhashwara Sihala Putra Gourawa, Deshamanya, Deshabandu",
         "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/ceo_kgvmys"
       },
@@ -188,10 +188,10 @@
     "academicSubtitle": "Our academic team leads the faculties and programs of UGCSL with expertise and dedication.",
     "academicStaff": [
       {
-        "name": "His Excellency Dr. B.H. Saiyadeen",
-        "role": "Chancellor (lay)",
-        "bio": "Global Ambassador UNPAF, SL Ambassador IHPRC, SL Ambassador (Unami Buffalo Nation)",
-        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/f_auto,q_auto,w_800/dr3_zntzcr"
+        "name": "Deshamannya Major General Priyantha Dasanayake (Retd)",
+        "role": "Chancellor",
+        "bio": "Former Commander of the Sri Lanka Army",
+        "photo": "https://res.cloudinary.com/dxkfytlpu/image/upload/v1792927403/majorGeneral_vtmra4.jpg"
       },
       {
         "name": "Mr. K. A. S. K. Gunaratne",
